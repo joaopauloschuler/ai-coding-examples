@@ -1492,4 +1492,97 @@ if (php_sapi_name() == 'cli') {
         echo $manager->showHelp();
     }
 }
+    
+/**
+Output example:
+==================================================
+--- Task Manager Ultimate Hybrid Self Test Started (v8.0) ---
+==================================================
+
+[1] Initializing Task Manager (clearing previous data and tasks.json).
+
+[2] Adding initial tasks:
+Added Task ID 1 (High, Overdue).
+Added Task ID 2 (Medium, Due: 2025-10-09).
+Added Task ID 3 (Low, No Due Date).
+Added Task ID 4 (High, Due: 2025-11-07).
+Added Task ID 5 (Low, Pending).
+Added Task ID 6 (Medium, Pending).
+Added Task ID 7 (Completed, 1 hour duration).
+Added Task ID 8 (Completed, 4 hour duration).
+
+[2b] Testing Strict Validation (addTask - Expected: Exception for invalid priority):
+SUCCESS: Caught expected exception for invalid priority: Invalid priority provided: SuperDuperHigh. Must be one of: Low, Medium, High
+
+[3] Testing Dedicated Tag Management:
+SUCCESS: Added 'php' tag to Task ID 2.
+SUCCESS: Removed 'Testing' tag from Task ID 2.
+SUCCESS: Task ID 2 tags verified.
+
+[4] Testing Update Task Exception Handling (Expected: Exception for invalid status):
+SUCCESS: Caught expected exception for invalid status in updateTask: Invalid status provided for update: NonExistentStatus. Must be one of: Pending, In Progress, Completed, Archived
+
+[4b] Setting up Time to Completion test (ID 4):
+SUCCESS: Time to Completion calculated for ID 4: 1 seconds (Expected: ~1 second).
+
+[4c] Testing Detailed View for ID 4:
+
+--- Task Details (ID: 4) ---
+Description: Refactor persistence layer.
+Status:      Completed
+Priority:    High
+Created At:  2025-10-08 12:34:27
+Due Date:    2025-11-07
+Completed At: 2025-10-08 12:34:28
+Time to Complete: 1 seconds
+Tags:        code, urgent
+---------------------------------
+
+[5] Testing Hard Delete and Purge:
+Task ID 5 archived.
+SUCCESS: Task ID 3 permanently deleted.
+SUCCESS: Task ID 3 verified as deleted.
+SUCCESS: Purged 1 archived task (ID 5).
+
+[6] Testing Tag Exclusion Filtering:
+Total tasks before exclusion filter: 6
+Tasks after excluding 'Exclude' tag: 5 (Expected 5: ID 1, 2, 4, 7, 8)
+SUCCESS: Tag exclusion filter worked correctly.
+
++------+----------------------------------------------------+--------------+----------+------------+---------------------+---------------------+----------------------------+
+| ID   | Description                                        | Status       | Priority | Due Date   | Created At          | Completed At        | Tags                       |
++------+----------------------------------------------------+--------------+----------+------------+---------------------+---------------------+----------------------------+
+| 1    | Review security audit findings and write a 500-wor | Pending      | High     | 2025-10-07 | 2025-10-08 12:34:27 | N/A                 | security, urgent, longtag1 |
+| 2    | Write documentation for filtering feature.         | Pending      | Medium   | 2025-10-09 | 2025-10-08 12:34:27 | N/A                 | documentation, php         |
+| 4    | Refactor persistence layer.                        | Completed    | High     | 2025-11-07 | 2025-10-08 12:34:27 | 2025-10-08 12:34:28 | code, urgent               |
+| 7    | Analytics Test 1 (1 hour)                          | Completed    | Low      | N/A        | 2024-01-01 10:00:00 | 2024-01-01 11:00:00 |                            |
+| 8    | Analytics Test 2 (4 hours)                         | Completed    | Low      | N/A        | 2024-01-02 10:00:00 | 2024-01-02 14:00:00 |                            |
++------+----------------------------------------------------+--------------+----------+------------+---------------------+---------------------+----------------------------+
+
+[7] Final Summary (Testing Advanced Analytics v8.0):
+
+--- Task Manager Summary (v8.0 Advanced Analytics) ---
+Total Tasks: 6
+Pending Tasks: 3
+In Progress Tasks: 0
+Completed Tasks: 3
+Archived Tasks: 0
+High Priority Tasks: 2
+Overdue Pending/In Progress Tasks: 1
+--------------------------------------------
+Completion Rate: 50.00%
+Avg. Completion Time: 1h 40m
+Med. Completion Time: 1h
+--------------------------------------------
+Priority Distribution:
+  - Low   :    2 tasks ( 33.3%)
+  - Medium:    2 tasks ( 33.3%)
+  - High  :    2 tasks ( 33.3%)
+--------------------------------------------
+SUCCESS: Advanced Analytics verified.
+
+==================================================
+--- Task Manager Ultimate Hybrid Self Test Completed (v8.0) ---
+==================================================    
+*/
 ?>
