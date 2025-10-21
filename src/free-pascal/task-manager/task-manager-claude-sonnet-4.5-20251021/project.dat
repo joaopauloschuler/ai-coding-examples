@@ -1,0 +1,8 @@
+TASKMANAGER_V1
+6
+5
+1|Project planning|Define project scope and requirements|1|3|45951.3243431134|45657|0|Planning|||4|0|Project Manager
+2|Backend development|Develop server-side logic|2|4|45951.3243431134|0|0|Development|||40|15|Backend Team
+3|Frontend development|Create user interface|1|3|45951.3243431134|0|0|Development|||30|0|Frontend Team
+4|Testing|Comprehensive testing phase|1|4|45951.3243431134|0|0|QA|||20|0|QA Team
+5|User documentation|Write user manuals and guides|1|2|45951.3243431134|0|0|Documentation|||8|0|Tech Writer
