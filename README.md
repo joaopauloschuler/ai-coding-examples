@@ -30,6 +30,32 @@ Each example includes:
 - Documentation and usage guides
 - AI-generated metadata (where applicable)
 
+## Compiling and Running Examples
+
+### Free Pascal (Object Pascal)
+
+To compile a Free Pascal source file, use the Free Pascal Compiler (fpc):
+
+```bash
+fpc source_file.pas -obin/output_name -O1 -Mobjfpc
+```
+
+**Example:**
+```bash
+fpc src/free-pascal/task-manager/task-manager-1.pas -obin/task-manager -O1 -Mobjfpc
+```
+
+Where:
+- `source_file.pas` - The Pascal source file to compile
+- `-obin/output_name` - Specifies the output binary location and name
+- `-O1` - Enables level 1 optimizations
+- `-Mobjfpc` - Sets the compiler mode to Object Pascal
+
+After compilation, run the binary:
+```bash
+./bin/task-manager
+```
+
 ## About the Code Generation
 
 All source code in this repository was generated using the [Beyond Python SmoLAgents](https://github.com/joaopauloschuler/beyond-python-smolagents) framework, which demonstrates AI capabilities in software development across multiple programming languages.

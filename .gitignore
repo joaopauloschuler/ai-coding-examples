@@ -1,0 +1,11 @@
+# Compiled binaries
+bin/
+
+# Task manager data files
+*.dat
+
+# Free Pascal compiler generated files
+*.o
+*.ppu
+*.compiled
+link.res
