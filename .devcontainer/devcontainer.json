@@ -9,7 +9,11 @@
   "remoteUser": "vscode",
   "customizations": {
     "vscode": {
-      "extensions": []
+      "extensions": [
+        "alefragnani.pascal",
+        "davidanson.vscode-markdownlint",
+        "ms-vscode.vscode-container-tools"
+      ]
     }
   }
 }
