@@ -1,0 +1,9 @@
+{
+    "files.autoGuessEncoding": true,
+    "files.candidateGuessEncodings": [
+        "utf16le",
+        "windows1252",
+        "utf8"
+    ],
+    "files.encoding": "utf8bom"
+}
