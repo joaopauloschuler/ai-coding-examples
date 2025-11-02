@@ -1,5 +1,5 @@
-﻿# Use the official devcontainer base image for Ubuntu 24.04
 FROM mcr.microsoft.com/devcontainers/base:ubuntu-24.04
+# Use the official devcontainer base image for Ubuntu 24.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
